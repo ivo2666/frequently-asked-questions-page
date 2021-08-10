@@ -21,10 +21,8 @@ function App() {
 
   const handleClick = (id: number) => {
     let value = data[id].answerIsOpen;
-    let newData: any = [...data];
-    newData.map((element: any) => {
-      return element.answerIsOpen = false;
-    });
+    let newData= data.map(el => Object.assign({}, el));
+    newData.map(el => el.answerIsOpen = false)
       newData[id].answerIsOpen = !value;
     setData(newData);
   }
