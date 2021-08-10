@@ -8,6 +8,7 @@ margin:10px;
     .question{
         background: #c5c3c3;
         padding: 10px;
+        cursor: pointer;
     img{
         width: 10px;
         float: right;    
