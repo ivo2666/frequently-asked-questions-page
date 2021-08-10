@@ -32,7 +32,7 @@ function App() {
       <Title />
       {data.map((el, i) => {
         return (
-          <Question key={i} data={el} id={i} onClick={handleClick} />
+          <Question key={el.question} data={el} id={i} onClick={handleClick} />
         )
       })}
     </StyledApp>
