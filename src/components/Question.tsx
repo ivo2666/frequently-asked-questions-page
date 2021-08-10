@@ -7,11 +7,11 @@ const StyledDiv = styled.div`
 margin:10px;
     .question{
         background: #c5c3c3;
-    padding: 10px;
+        padding: 10px;
     img{
         width: 10px;
         float: right;    
- margin: 0 0 0 15px;
+        margin: 0 0 0 15px;
     }
     }
     .answer{
@@ -32,28 +32,20 @@ interface Props {
     id: number
 }
 
-
 const Question = (props: Props) => {
-    const answer = (isOpen: boolean) => {
-        if (isOpen) {
-            return (
-                <div className='answer'>
-                    {props.data.answer}
-                </div>
-            );
-        }
-    };
+    const answer = 
+    props.data.answerIsOpen && <div className='answer'>{props.data.answer}</div>;
 
-    const arrow = props.data.answerIsOpen ? up : down ;
+    const arrow = props.data.answerIsOpen ? up : down;
 
 
     return (
         <StyledDiv>
             <div className='question' onClick={() => props.onClick(props.id)}>
                 {props.data.question}
-                <img alt="arrow" src={arrow}/>
+                <img alt="arrow" src={arrow} />
             </div>
-            {answer(props.data.answerIsOpen)}
+            {answer}
         </StyledDiv>
     );
 }

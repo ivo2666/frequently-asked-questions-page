@@ -6,7 +6,7 @@ import styled from 'styled-components';
 
 const StyledApp = styled.div`
 margin:auto;
-width: 50%;
+width: 75%;
 `
 
 function App() {
