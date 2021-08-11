@@ -6,7 +6,7 @@ import styled from 'styled-components';
 
 const StyledApp = styled.div`
 margin:auto;
-width: 50%;
+width: 75%;
 `
 
 function App() {
@@ -21,10 +21,8 @@ function App() {
 
   const handleClick = (id: number) => {
     let value = data[id].answerIsOpen;
-    let newData: any = [...data];
-    newData.map((element: any) => {
-      return element.answerIsOpen = false;
-    });
+    let newData= data.map(el => Object.assign({}, el));
+    newData.map(el => el.answerIsOpen = false)
       newData[id].answerIsOpen = !value;
     setData(newData);
   }
@@ -34,7 +32,7 @@ function App() {
       <Title />
       {data.map((el, i) => {
         return (
-          <Question key={i} data={el} id={i} onClick={handleClick} />
+          <Question key={el.question} data={el} id={i} onClick={handleClick} />
         )
       })}
     </StyledApp>

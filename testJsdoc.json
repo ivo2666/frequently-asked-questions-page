@@ -1,0 +1,10 @@
+{
+    "source": {
+        "includePattern": "Question.tsx",   
+        "exclude": ["node_modules"]          
+    },
+    "opts": {
+        "destination": "./docs/",              
+        "recurse": true                         
+    }
+}
